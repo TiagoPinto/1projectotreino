@@ -1,4 +1,8 @@
 aqui esta o primeiro commit so para relembrar como funciona
 Segundo commit só para experimentar - joao
+<<<<<<< HEAD
 
 asdassda
+=======
+3n commit- Pedro
+>>>>>>> 70f70214130ed4f1746a74a1b9d25fcf918c1664
