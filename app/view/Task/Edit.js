@@ -1,4 +1,4 @@
-Ext.define('AM.view.user.Edit', {
+Ext.define('TR.view.Task.Edit', {
     extend: 'Ext.window.Window',
     alias: 'widget.useredit',
 

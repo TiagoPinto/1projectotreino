@@ -1,10 +1,10 @@
-Ext.define('AM.view.user.List' ,{
+Ext.define('TR.view.Task.List' ,{
     extend: 'Ext.grid.Panel',
     alias: 'widget.userlist',
 
     title: 'All Users',
     
-    store: 'Users',
+    store: 'Tasks',
 
     initComponent: function() {
 

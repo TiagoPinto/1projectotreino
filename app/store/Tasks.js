@@ -1,6 +1,6 @@
-Ext.define('AM.store.Users', {
+Ext.define('TR.store.Tasks', {
     extend: 'Ext.data.Store',
-    model: 'AM.model.User',
+    model: 'TR.model.Task',
     autoLoad: true,
     requires: [
         'Ext.data.proxy.LocalStorage',

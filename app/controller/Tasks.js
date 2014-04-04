@@ -1,9 +1,9 @@
-Ext.define('AM.controller.Users', {
+Ext.define('TR.controller.Tasks', {
     extend: 'Ext.app.Controller',
     
-    stores: ['Users'],
-    models: ['User'],
-    views: ['user.List', 'user.Edit'],
+    stores: ['Tasks'],
+    models: ['Task'],
+    views: ['Task.List', 'Task.Edit'],
     
     init: function() {
         this.control({
