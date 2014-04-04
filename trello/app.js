@@ -1,6 +1,7 @@
 Ext.application({
     requires: ['Ext.container.Viewport'],
 <<<<<<< HEAD
+<<<<<<< HEAD
     name: 'AM',
 
     appFolder: 'app',
@@ -43,6 +44,8 @@ Ext.application({
                 action: 'save'
             }]
 =======
+=======
+>>>>>>> bd251b2c4d5b12e437565b2f0723c5bdf32a4214
     name: 'TR',
     appFolder: 'app',
 
@@ -59,6 +62,9 @@ items: [
     {title:'Ongoing', flex:1},
     {title:'Completed', flex:1}
 ]
+<<<<<<< HEAD
+>>>>>>> bd251b2c4d5b12e437565b2f0723c5bdf32a4214
+=======
 >>>>>>> bd251b2c4d5b12e437565b2f0723c5bdf32a4214
         });
     }
