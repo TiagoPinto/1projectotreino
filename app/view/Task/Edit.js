@@ -13,13 +13,18 @@ Ext.define('TR.view.Task.Edit', {
                 items: [
                     {
                         xtype: 'textfield',
-                        name : 'name',
-                        fieldLabel: 'Name'
+                        name : 'column',
+                        fieldLabel: 'Coluna'
                     },
                     {
                         xtype: 'textfield',
-                        name : 'email',
-                        fieldLabel: 'Email'
+                        name : 'title',
+                        fieldLabel: 'Titulo'
+                    },
+                    {
+                        xtype: 'textfield',
+                        name : 'discription',
+                        fieldLabel: 'Descrição'
                     }
                 ]
             }

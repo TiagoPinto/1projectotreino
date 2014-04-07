@@ -6,13 +6,14 @@ Ext.define('TR.controller.Tasks', {
     views: ['Task.List', 'Task.Edit'],
     
     init: function() {
+        console.log('Model', this.getTasksStore());
         this.control({
             'userlist': {
                 itemdblclick: this.editUser
             },
             'useredit button[action=save]': {
                 click: this.updateUser
-            }
+            },
         });
     },
     
@@ -25,7 +26,7 @@ Ext.define('TR.controller.Tasks', {
         record.set(values);
         win.close();
         // synchronize the store after editing the record
-        this.getUsersStore().sync();
+        this.getTasksStore().sync();
     },
 
     editUser: function(grid, record) {
