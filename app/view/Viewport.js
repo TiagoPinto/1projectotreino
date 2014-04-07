@@ -24,8 +24,10 @@ Ext.define('TR.view.Viewport', {
             }, {
                 region: 'west',
                 xtype: 'userlist',
+                name: 'list2',
                 title: 'Inner Panel Two',
-                flex: 1
+                flex: 1,
+                store: Ext.create("TR.store.Tasks")
             }, {
                 region: 'east',
                 xtype: 'userlist',

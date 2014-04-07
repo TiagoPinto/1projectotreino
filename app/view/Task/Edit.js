@@ -7,7 +7,29 @@ Ext.define('TR.view.Task.Edit', {
     autoShow: true,
 
     initComponent: function() {
-        this.items = [
+        this.callParent(arguments);
+        
+        this.addEvents(
+            /**
+             * @event saveTask
+             * Triggered when the user presses the save button.
+             */
+            "saveTask");
+
+        this.down("button[action=save]").on("click", function() {
+            var form = this.down("form"),
+                record = form.getRecord(),
+                values = form.getValues();
+            record.set(values);
+            this.close();
+            this.fireEvent("saveTask", record);
+        }, this);
+        
+        this.down("form").loadRecord(this.record);
+        delete this.record;
+    },
+    
+    items: [
             {
                 xtype: 'form',
                 items: [
@@ -23,9 +45,9 @@ Ext.define('TR.view.Task.Edit', {
                     }
                 ]
             }
-        ];
-
-        this.buttons = [
+        ],
+    
+    buttons: [
             {
                 text: 'Save',
                 action: 'save'
@@ -35,8 +57,5 @@ Ext.define('TR.view.Task.Edit', {
                 scope: this,
                 handler: this.close
             }
-        ];
-
-        this.callParent(arguments);
-    }
+        ]
 });

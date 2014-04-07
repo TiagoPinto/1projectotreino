@@ -14,5 +14,9 @@ Ext.define('TR.view.Task.List' ,{
         ];
 
         this.callParent(arguments);
+    },
+    
+    addTask: function(record) {
+        this.getStore().add(record);   
     }
 });
