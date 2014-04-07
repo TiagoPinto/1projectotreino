@@ -6,35 +6,37 @@ Ext.define('TR.controller.Tasks', {
     views: ['Task.List', 'Task.Edit'],
     
     refs: [{
-        ref: 'userList2',
-        selector: 'userlist[name=list2]',
+        ref: 'taskList2',
+        selector: 'tasklist[name=list2]',
     }],
     
     init: function() {
         this.control({
-            'userlist': {
-                itemdblclick: this.editUser
+            'tasklist': {
+                itemdblclick: this.editTask
             },
-            'useredit': {
-                saveTask: {fn:this.updateUser, element:this}
+            'taskedit': {
+                saveTask: {
+                    fn: this.updateTask, 
+                    element: this}
             }
         });
     },
     
-    updateUser: function(record) {
+    updateTask: function(record) {
         // synchronize the store after editing the record
         //this.getTasksStore().sync();
         
         var rec = Ext.create("TR.model.Task", {
-            name: record.get("name"),
-            email: record.get("email")
+            title: record.get("title"),
+            description: record.get("description")
         });
         
-        this.getUserList2().addTask(rec);
+        this.getTaskList2().addTask(rec);
     },
 
-    editUser: function(grid, record) {
-        var view = Ext.widget('useredit', {
+    editTask: function(grid, record) {
+        var view = Ext.widget('taskedit', {
             record: record
         });
     }

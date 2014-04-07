@@ -1,8 +1,8 @@
 Ext.define('TR.view.Task.Edit', {
     extend: 'Ext.window.Window',
-    alias: 'widget.useredit',
+    alias: 'widget.taskedit',
 
-    title: 'Edit User',
+    title: 'Edit Task',
     layout: 'fit',
     autoShow: true,
 
@@ -35,13 +35,13 @@ Ext.define('TR.view.Task.Edit', {
                 items: [
                     {
                         xtype: 'textfield',
-                        name : 'name',
-                        fieldLabel: 'Name'
+                        name : 'title',
+                        fieldLabel: 'Title'
                     },
                     {
                         xtype: 'textfield',
-                        name : 'email',
-                        fieldLabel: 'Email'
+                        name : 'description',
+                        fieldLabel: 'Description'
                     }
                 ]
             }

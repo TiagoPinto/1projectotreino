@@ -14,7 +14,7 @@ Ext.define('TR.store.Tasks', {
         },
         reader: {
             type: 'json',
-            root: 'users',
+            root: 'tasks',
             successProperty: 'success'
         },
         writer: {

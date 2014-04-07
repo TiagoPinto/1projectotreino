@@ -1,5 +1,5 @@
 Ext.define('TR.model.Task', {
     extend: 'Ext.data.Model',
-    fields: ['name', 'email'],
-    sorters: ['name', 'email'],
+    fields: ['title', 'description'],
+    sorters: ['title', 'description'],
 });

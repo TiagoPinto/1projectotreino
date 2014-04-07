@@ -1,16 +1,16 @@
 Ext.define('TR.view.Task.List' ,{
     extend: 'Ext.grid.Panel',
-    alias: 'widget.userlist',
+    alias: 'widget.tasklist',
 
-    title: 'All Users',
+    title: 'All Tasks',
     
     store: 'Tasks',
 
     initComponent: function() {
 
         this.columns = [
-            {header: 'Name',  dataIndex: 'name',  flex: 1},
-            {header: 'Email', dataIndex: 'email', flex: 1}
+            {header: 'Title',  dataIndex: 'title',  flex: 1},
+            {header: 'Description', dataIndex: 'description', flex: 1}
         ];
 
         this.callParent(arguments);

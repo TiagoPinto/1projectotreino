@@ -18,19 +18,19 @@ Ext.define('TR.view.Viewport', {
                 text: 'Isto é o header'
             }, {
                 region: 'center',
-                xtype: 'userlist',
+                xtype: 'tasklist',
                 title: 'Painel com users',
                 flex: 2
             }, {
                 region: 'west',
-                xtype: 'userlist',
+                xtype: 'tasklist',
                 name: 'list2',
                 title: 'Inner Panel Two',
                 flex: 1,
                 store: Ext.create("TR.store.Tasks")
             }, {
                 region: 'east',
-                xtype: 'userlist',
+                xtype: 'tasklist',
                 title: 'Inner Panel Three',
                 flex: 1
             }, {
