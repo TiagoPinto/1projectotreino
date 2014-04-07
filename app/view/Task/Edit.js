@@ -25,6 +25,10 @@ Ext.define('TR.view.Task.Edit', {
             this.fireEvent("saveTask", record);
         }, this);
         
+        this.down("button[action=cancel]").on("click", function() {
+            this.close();
+        }, this);
+        
         this.down("form").loadRecord(this.record);
         delete this.record;
     },
@@ -33,6 +37,11 @@ Ext.define('TR.view.Task.Edit', {
             {
                 xtype: 'form',
                 items: [
+                    {
+                        xtype: 'textfield',
+                        name : 'column',
+                        fieldLabel: 'Task'
+                    },
                     {
                         xtype: 'textfield',
                         name : 'title',
@@ -54,8 +63,7 @@ Ext.define('TR.view.Task.Edit', {
             },
             {
                 text: 'Cancel',
-                scope: this,
-                handler: this.close
+                action: 'cancel'
             }
         ]
 });

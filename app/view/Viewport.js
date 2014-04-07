@@ -1,12 +1,18 @@
 Ext.define('TR.view.Viewport', {
     extend: 'Ext.Viewport',    
-    
+    requires: ['TR.data.proxy.Proxy'],
+
     title: "Trello",
     layout: {
         type: 'border'
         //align: 'stretch'
     },
     
+    syncListStores: function () {
+        Ext.Array.each(this.query("tasklist"), function(tl) {
+            tl.getStore().reload();
+        });
+    },
     
     initComponent: function() {
         var me = this;
@@ -19,20 +25,48 @@ Ext.define('TR.view.Viewport', {
             }, {
                 region: 'center',
                 xtype: 'tasklist',
-                title: 'Painel com users',
-                flex: 2
+                name: 'list2',
+                title: 'ToDo Tasks',
+                flex: 2,
+                store: Ext.create("Ext.data.Store", {
+                    autoLoad: true,
+                    model: "TR.model.Task",
+                    proxy: {
+                        type: "store",
+                        sourceStore: "Tasks"
+                    },
+                    filters: [{property: "column", value: "col1"}]
+                })
             }, {
                 region: 'west',
                 xtype: 'tasklist',
-                name: 'list2',
-                title: 'Inner Panel Two',
+                name: 'list1',
+                title: 'Doing Tasks',
                 flex: 1,
-                store: Ext.create("TR.store.Tasks")
+                store: Ext.create("Ext.data.Store", {
+                    autoLoad: true,
+                    model: "TR.model.Task",
+                    proxy: {
+                        type: "store",
+                        sourceStore: "Tasks"
+                    },
+                    filters: [{property: "column", value: "col2"}]
+                })
             }, {
                 region: 'east',
                 xtype: 'tasklist',
-                title: 'Inner Panel Three',
-                flex: 1
+                name: 'list3',
+                title: 'Completed Tasks',
+                flex: 1,
+                store: Ext.create("Ext.data.Store", {
+                    autoLoad: true,
+                    model: "TR.model.Task",
+                    proxy: {
+                        type: "store",
+                        sourceStore: "Tasks"
+                    },
+                    filters: [{property: "column", value: "col3"}]
+                })
             }, {
                 region: 'south',
                 xtype: 'button',
