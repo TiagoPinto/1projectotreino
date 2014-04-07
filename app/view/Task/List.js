@@ -9,8 +9,9 @@ Ext.define('TR.view.Task.List' ,{
     initComponent: function() {
 
         this.columns = [
-            {header: 'Name',  dataIndex: 'name',  flex: 1},
-            {header: 'Email', dataIndex: 'email', flex: 1}
+            {header: 'Coluna',  dataIndex: 'columm',  flex: 1},
+            {header: 'Título', dataIndex: 'title', flex: 1},
+            {header: 'Descrição', dataIndex: 'discription', flex: 1}
         ];
 
         this.callParent(arguments);
