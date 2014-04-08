@@ -25,64 +25,9 @@ Ext.define('TR.view.Viewport', {
             }, {
                 xtype: 'container',
                 layout: 'column',
+                name: "tasklistcontainer",
                 title: 'Trello',
-                items: [{
-                    xtype: 'tasklist',
-                    name: 'list2',
-                    title: 'ToDo Tasks',
-                    columnWidth: 0.33,
-                    columnHeight: 1,
-                    flex: 1,
-                    store: Ext.create("Ext.data.Store", {
-                        autoLoad: true,
-                        model: "TR.model.Task",
-                        proxy: {
-                            type: "store",
-                            sourceStore: "Tasks"
-                        },
-                        filters: [{
-                            property: "column",
-                            value: "ToDo Tasks"
-                    }]
-                    })
-                }, {
-                    xtype: 'tasklist',
-                    name: 'list3',
-                    title: 'Doing Tasks',
-                    columnWidth: 0.33,
-                    columnHeight: 1,
-                    flex: 1,
-                    store: Ext.create("Ext.data.Store", {
-                        autoLoad: true,
-                        model: "TR.model.Task",
-                        proxy: {
-                            type: "store",
-                            sourceStore: "Tasks"
-                        },
-                        filters: [{
-                            property: "column",
-                            value: "Doing Tasks"
-                    }]
-                    })
-            }, {
-                    xtype: 'tasklist',
-                    name: 'list1',
-                    title: 'Completed Tasks',
-                    columnWidth: 0.33,
-                    flex: 1,
-                    store: Ext.create("Ext.data.Store", {
-                        autoLoad: true,
-                        model: "TR.model.Task",
-                        proxy: {
-                            type: "store",
-                            sourceStore: "Tasks"
-                        },
-                        filters: [{
-                            property: "column",
-                            value: "Completed Tasks"
-                    }]
-                    })
-            }]
+                items: []
             }, {
                 xtype: 'container',
                 flex: 1,

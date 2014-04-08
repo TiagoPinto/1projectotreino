@@ -3,10 +3,10 @@ Ext.application({
     name: 'TR',
 
     appFolder: 'app',
-    
+
     controllers: [
-        'Tasks','Columns'
+        'Tasks', 'Columns'
     ],
-    
+
     autoCreateViewport: true
 });

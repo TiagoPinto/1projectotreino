@@ -6,9 +6,9 @@ Ext.define('TR.view.Column.AddColumn', {
     layout: 'fit',
     autoShow: true,
 
-    initComponent: function() {
+    initComponent: function () {
         this.callParent(arguments);
-        
+
         this.addEvents(
             /**
              * @event saveTask
@@ -16,46 +16,44 @@ Ext.define('TR.view.Column.AddColumn', {
              */
             "addColumn");
 
-        this.down("button[action=add]").on("click", function() {
-            debugger;
+        this.down("button[action=add]").on("click", function () {
             var form = this.down("form"),
                 record = form.getRecord(),
                 values = form.getValues();
             record.set(values);
-            this.close();
-            debugger;
             this.fireEvent("addColumn", record);
-        }, this);
-        
-        this.down("button[action=cancel]").on("click", function() {
             this.close();
         }, this);
-        
+
+        this.down("button[action=cancel]").on("click", function () {
+            this.close();
+        }, this);
+
         this.down("form").loadRecord(this.record);
         delete this.record;
     },
-    
+
     items: [
-            {
-                xtype: 'form',
-                items: [
-                    {
-                        xtype: 'textfield',
-                        name : 'title',
-                        fieldLabel: 'Title'
+        {
+            xtype: 'form',
+            items: [
+                {
+                    xtype: 'textfield',
+                    name: 'title',
+                    fieldLabel: 'Title'
                     }
                 ]
             }
         ],
-    
+
     buttons: [
-            {
-                text: 'Add',
-                action: 'add'
+        {
+            text: 'Add',
+            action: 'add'
             },
-            {
-                text: 'Cancel',
-                action: 'cancel'
+        {
+            text: 'Cancel',
+            action: 'cancel'
             }
-        ]
+        ],
 });

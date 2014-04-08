@@ -6,9 +6,9 @@ Ext.define('TR.view.Task.Edit', {
     layout: 'fit',
     autoShow: true,
 
-    initComponent: function() {
+    initComponent: function () {
         this.callParent(arguments);
-        
+
         this.addEvents(
             /**
              * @event saveTask
@@ -16,55 +16,57 @@ Ext.define('TR.view.Task.Edit', {
              */
             "saveTask");
 
-        this.down("button[action=save]").on("click", function() {
+        this.down("button[action=save]").on("click", function () {
             var form = this.down("form"),
                 record = form.getRecord(),
                 values = form.getValues();
             record.set(values);
             this.close();
             this.fireEvent("saveTask", record);
-            debugger;
         }, this);
-        
-        this.down("button[action=cancel]").on("click", function() {
+
+        this.down("button[action=cancel]").on("click", function () {
             this.close();
         }, this);
-        
+
         this.down("form").loadRecord(this.record);
         delete this.record;
     },
-    
+
     items: [
-            {
-                xtype: 'form',
-                items: [
-                    {
-                        xtype: 'textfield',
-                        name : 'column',
-                        fieldLabel: 'Column Number'
+        {
+            xtype: 'form',
+            items: [
+                {
+                    xtype: 'textfield',
+                    name: 'title',
+                    fieldLabel: 'Title'
                     },
-                    {
-                        xtype: 'textfield',
-                        name : 'title',
-                        fieldLabel: 'Title'
+                {
+                    xtype: 'textfield',
+                    name: 'description',
+                    fieldLabel: 'Discription'
                     },
-                    {
-                        xtype: 'textfield',
-                        name : 'description',
-                        fieldLabel: 'Description'
+                {
+                    xtype: 'combo',
+                    fieldLabel: 'Column Name',
+                    name: 'column',
+                    queryMode: 'local',
+                    store: 'Columns',
+                    displayField: 'title'
                     }
                 ]
             }
         ],
-    
+
     buttons: [
-            {
-                text: 'Save',
-                action: 'save'
+        {
+            text: 'Save',
+            action: 'save'
             },
-            {
-                text: 'Cancel',
-                action: 'cancel'
+        {
+            text: 'Cancel',
+            action: 'cancel'
             }
         ]
 });
