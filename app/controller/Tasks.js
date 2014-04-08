@@ -30,10 +30,10 @@ Ext.define('TR.controller.Tasks', {
                     element: this
                 }
             },
-            'viewport > button[action=save]': {
+            'viewport button[action=addtask]': {
                 click: {
                     fn: this.addTask,
-                    element: this
+                    element: this,
                 }
             }
         });
