@@ -3,13 +3,13 @@ Ext.define('TR.controller.Columns', {
 
     stores: ['Columns'],
     models: ['Column'],
-    views: ['Column.ColumnList'],
+    views: ['Column.AddColumn'],
 
     init: function () {
         this.control({
-            'addcolumn': {
+            'viewport button[action=addcolumn]': {
                 click: {
-                    fn: this.addTask,
+                    fn: this.addColumn,
                     element: this
                 }
             }
@@ -17,8 +17,11 @@ Ext.define('TR.controller.Columns', {
     },
     
     addColumn: function (grid, record) {
+        var record = Ext.create("TR.model.Column");
+        Ext.StoreManager.get("Columns").add(record);
+        //debugger;
         var view = Ext.widget('addcolumn', {
             record: record
         });
-    },
+    }
 });

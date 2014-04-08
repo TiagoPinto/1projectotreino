@@ -10,7 +10,7 @@ Ext.define('TR.view.Task.List' ,{
         this.columns = [
             {header: 'Title',  dataIndex: 'title',  flex: 1},
             {header: 'Description', dataIndex: 'description', flex: 1},
-            {header: 'Description', dataIndex: 'column', flex: 1}
+            {header: 'Column Number', dataIndex: 'column', flex: 1}
         ];
 
         this.callParent(arguments);

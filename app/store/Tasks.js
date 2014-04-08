@@ -11,25 +11,25 @@ Ext.define('TR.store.Tasks', {
             "id": "1",
             "title": 'Teste',
             "description": "ed@sencha.com",
-            "column": 'col1'
+            "column": 'ToDo Tasks'
         },
         {
             "id": "2",
             "title": 'teste2',
             "description": "tommy@sencha.com",
-            "column": 'col2'
+            "column": 'Doing Tasks'
         },
         {
             "id": "3",
             "title": 'teste3',
             "description": "tommy@sencha.com",
-            "column": 'col3'
+            "column": 'Completed Tasks'
         },
         {
             "id": "4",
             "title": 'teste4',
             "description": "tommy@sencha.com",
-            "column": 'col1'
+            "column": 'ToDo Tasks'
         }
     ]
 });

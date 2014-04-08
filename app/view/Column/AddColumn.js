@@ -16,12 +16,14 @@ Ext.define('TR.view.Column.AddColumn', {
              */
             "addColumn");
 
-        this.down("button[action=addColumn]").on("click", function() {
+        this.down("button[action=add]").on("click", function() {
+            debugger;
             var form = this.down("form"),
                 record = form.getRecord(),
                 values = form.getValues();
             record.set(values);
             this.close();
+            debugger;
             this.fireEvent("addColumn", record);
         }, this);
         
@@ -39,11 +41,6 @@ Ext.define('TR.view.Column.AddColumn', {
                 items: [
                     {
                         xtype: 'textfield',
-                        name : 'column',
-                        fieldLabel: 'Column'
-                    },
-                    {
-                        xtype: 'textfield',
                         name : 'title',
                         fieldLabel: 'Title'
                     }
@@ -53,8 +50,8 @@ Ext.define('TR.view.Column.AddColumn', {
     
     buttons: [
             {
-                text: 'Save',
-                action: 'save'
+                text: 'Add',
+                action: 'add'
             },
             {
                 text: 'Cancel',

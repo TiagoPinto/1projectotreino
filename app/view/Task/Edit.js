@@ -23,6 +23,7 @@ Ext.define('TR.view.Task.Edit', {
             record.set(values);
             this.close();
             this.fireEvent("saveTask", record);
+            debugger;
         }, this);
         
         this.down("button[action=cancel]").on("click", function() {
@@ -40,7 +41,7 @@ Ext.define('TR.view.Task.Edit', {
                     {
                         xtype: 'textfield',
                         name : 'column',
-                        fieldLabel: 'Task'
+                        fieldLabel: 'Column Number'
                     },
                     {
                         xtype: 'textfield',

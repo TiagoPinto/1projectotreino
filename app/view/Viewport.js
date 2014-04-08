@@ -42,7 +42,7 @@ Ext.define('TR.view.Viewport', {
                         },
                         filters: [{
                             property: "column",
-                            value: "col1"
+                            value: "ToDo Tasks"
                     }]
                     })
                 }, {
@@ -61,7 +61,7 @@ Ext.define('TR.view.Viewport', {
                         },
                         filters: [{
                             property: "column",
-                            value: "col2"
+                            value: "Doing Tasks"
                     }]
                     })
             }, {
@@ -79,7 +79,7 @@ Ext.define('TR.view.Viewport', {
                         },
                         filters: [{
                             property: "column",
-                            value: "col3"
+                            value: "Completed Tasks"
                     }]
                     })
             }]
