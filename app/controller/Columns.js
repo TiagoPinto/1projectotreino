@@ -8,7 +8,7 @@ Ext.define('TR.controller.Columns', {
     refs: [
         {
             ref: "columnContainer",
-            selector: "viewport > [name=tasklistcontainer]"
+            selector: "viewport [name=tasklistcontainer]"
         }
     ],
 

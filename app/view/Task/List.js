@@ -2,12 +2,11 @@ Ext.define('TR.view.Task.List', {
     extend: 'Ext.grid.Panel',
     alias: 'widget.tasklist',
 
-    title: 'All Tasks',
     queryMode: 'local',
 
     constructor: function (config) {
         var columnsStore = config.store;
-        
+
         config.store = Ext.create("Ext.data.Store", {
             autoLoad: true,
             model: "TR.model.Task",
@@ -21,15 +20,17 @@ Ext.define('TR.view.Task.List', {
             }]
         });
         
+        this.title = config.record.get("title");
+
         this.callParent(arguments);
-        
+
         this.columnsStore = columnsStore;
         this.record = config.record;
-        
+
         if (columnsStore) {
             columnsStore.on("update", this.storeUpdated, this);
         }
-        
+
     },
 
     storeUpdated: function (store, record, operation) {
