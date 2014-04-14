@@ -35,7 +35,6 @@ Ext.define('TR.controller.Columns', {
                 }
             }
         });
-        //this.getColumnContainer().add(store.get(0));
     },
 
     addColumn: function (grid, record) {
