@@ -6,18 +6,16 @@ Ext.define('TR.controller.Tasks', {
     views: ['Task.List', 'Task.Edit'],
 
     refs: [{
-        ref: 'taskList1',
-        selector: 'tasklist[name=list1]'
+            ref: 'taskList1',
+            selector: 'tasklist[name=list1]'
         }, {
-        ref: 'taskList2',
-        selector: 'tasklist[name=list2]'
+            ref: 'viewport',
+            selector: 'viewport'
         }, {
-        ref: 'taskList3',
-        selector: 'tasklist[name=list3]'
-        }, {
-        ref: 'viewport',
-        selector: 'viewport'
-        }],
+            ref: 'buttonAddTask',
+            selector: '#btnaddtask'
+        }
+          ],
 
     init: function () {
         this.control({
@@ -30,7 +28,7 @@ Ext.define('TR.controller.Tasks', {
                     element: this
                 }
             },
-            'viewport button[action=addtask]': {
+            '#btnaddtask': {
                 click: {
                     fn: this.addTask,
                     element: this,

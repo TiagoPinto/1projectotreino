@@ -1,16 +1,19 @@
 Ext.define('TR.controller.Login', {
     extend: 'Ext.app.Controller',
 
-    views: ['Login.Login','Task.ListColumns'],
-    
-    refs: {
-        ref: 'mainPage',
+    views: ['Login.Login', 'Task.ListColumns'],
+
+    refs: [{
+        ref: 'mainpage',
         selector: 'mainpage'
-    },
+    },{
+        ref: 'btnlogin',
+        selector: '#btnlogin'
+    }],
 
     init: function () {
         this.control({
-            'viewport button[action=login]': {
+            '#btnlogin': {
                 click: {
                     fn: this.login,
                     element: this,
@@ -18,11 +21,11 @@ Ext.define('TR.controller.Login', {
             }
         });
     },
-    
+
     login: function (grid, record) {
-        var me = this;
+        viewport = Ext.ComponentQuery.query('mainpage');
         debugger;
-        
-        Ext.create('TR.view.Task.ListColumns').show();
+        target = Ext.ComponentQuery.query(btn.go);
+        viewport[0].setActiveItem(target[0]);
     }
 });

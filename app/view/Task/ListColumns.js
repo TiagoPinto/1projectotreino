@@ -28,7 +28,6 @@ Ext.define('TR.view.Task.ListColumns', {
                 xtype: 'container',
                 layout: 'column',
                 name: 'tasklistcontainer',
-                title: 'Trello',
                 items: []
             }, {
                 xtype: 'container',
@@ -38,11 +37,13 @@ Ext.define('TR.view.Task.ListColumns', {
                     xtype: 'button',
                     text: 'Add Task',
                     action: 'addtask',
+                    itemId: 'btnaddtask',
                     flex: 0.5
                 }, {
                     xtype: 'button',
                     text: 'Add Column',
                     action: 'addcolumn',
+                    itemId: 'btnaddcolumn',
                     flex: 0.5
                 }]
             }]

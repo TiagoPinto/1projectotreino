@@ -4,8 +4,11 @@ Ext.define('TR.view.Login.Login', {
 
     title: 'Login',
     queryMode: 'local',
+    
+    
 
     initComponent: function () {
+        
         this.callParent(arguments);
     },
 
@@ -28,7 +31,8 @@ Ext.define('TR.view.Login.Login', {
     buttons: [
         {
             text: 'Login',
-            action: 'login'
+            action: 'login',
+            itemId: 'btnlogin'
             }
         ]
 
