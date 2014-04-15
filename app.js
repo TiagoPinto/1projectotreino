@@ -5,7 +5,7 @@ Ext.application({
     appFolder: 'app',
 
     controllers: [
-        'Tasks', 'Columns', 'Login'
+        'Login','Tasks','Columns'
     ],
 
     autoCreateViewport: true

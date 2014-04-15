@@ -3,7 +3,7 @@ Ext.define('TR.controller.Columns', {
 
     stores: ['Columns'],
     models: ['Column'],
-    views: ['Column.AddColumn','Column.ListColumn'],
+    views: ['Column.AddColumn', 'Column.ListColumn'],
 
     refs: [
         {
@@ -12,7 +12,7 @@ Ext.define('TR.controller.Columns', {
         }
     ],
 
-    onLaunch: function () {
+    /*onLaunch: function () {
         var store = Ext.StoreManager.get("Columns");
 
         for (var i = 1; i <= Ext.StoreManager.get("Columns").data.length; i++) {
@@ -24,7 +24,7 @@ Ext.define('TR.controller.Columns', {
             });
             this.getColumnContainer().add(columnView);
         };
-    },
+    },*/
 
     init: function () {
         this.control({
@@ -35,7 +35,6 @@ Ext.define('TR.controller.Columns', {
                 }
             }
         });
-        //this.getColumnContainer().add(store.get(0));
     },
 
     addColumn: function (grid, record) {
@@ -47,19 +46,20 @@ Ext.define('TR.controller.Columns', {
         });
 
         view.on('addColumn', function (record) {
-            if(record.data.title==""){
-            Ext.Msg.alert('Please insert a Title');
-                         }else{
-            store.add(record);
-            var columnView = Ext.create("TR.view.Task.ListTask", {
-                record: record,
-                store: store,
-                columnWidth: 0.33
-            });
+            if (record.data.title == "") {
+                Ext.Msg.alert('Please insert a Title');
+            } else {
+                store.add(record);
+                var columnView = Ext.create("TR.view.Task.ListTask", {
+                    record: record,
+                    store: store,
+                    columnWidth: 0.33
+                });
 
-            this.getColumnContainer().add(columnView);
-                             
-            }}, this);
+                this.getColumnContainer().add(columnView);
+
+            }
+        }, this);
 
     }
 });

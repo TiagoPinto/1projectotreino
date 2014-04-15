@@ -22,7 +22,7 @@ Ext.define('TR.view.Viewport', {
             items: [{
                 xtype: 'container',
                 items: [{
-                    xtype: 'listcolumn'
+                    xtype: 'login'
                 }]
             }]
         });
