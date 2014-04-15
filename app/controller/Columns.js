@@ -14,9 +14,9 @@ Ext.define('TR.controller.Columns', {
 
     onLaunch: function () {
         var store = Ext.StoreManager.get("Columns");
-        
-        for(var i = 1; i <= Ext.StoreManager.get("Columns").data.length; i++){
-            console.log("coluna",store.data.get(i));
+
+        for (var i = 1; i <= Ext.StoreManager.get("Columns").data.length; i++) {
+            console.log("coluna", store.data.get(i));
             var columnView = Ext.create("TR.view.Task.List", {
                 record: store.data.get(i),
                 store: store,
@@ -39,6 +39,7 @@ Ext.define('TR.controller.Columns', {
     },
 
     addColumn: function (grid, record) {
+
         var record = Ext.create("TR.model.Column");
         var store = Ext.StoreManager.get("Columns");
         var view = Ext.widget('addcolumn', {
@@ -46,8 +47,10 @@ Ext.define('TR.controller.Columns', {
         });
 
         view.on('addColumn', function (record) {
+            if(record.data.title==""){
+            Ext.Msg.alert('Please insert a Title');
+                         }else{
             store.add(record);
-            debugger;
             var columnView = Ext.create("TR.view.Task.List", {
                 record: record,
                 store: store,
@@ -55,6 +58,8 @@ Ext.define('TR.controller.Columns', {
             });
 
             this.getColumnContainer().add(columnView);
-        }, this);
+                             
+            }}, this);
+
     }
 });

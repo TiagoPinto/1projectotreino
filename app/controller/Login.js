@@ -23,9 +23,6 @@ Ext.define('TR.controller.Login', {
     },
 
     login: function (grid, record) {
-        viewport = Ext.ComponentQuery.query('mainpage');
-        debugger;
-        target = Ext.ComponentQuery.query(btn.go);
-        viewport[0].setActiveItem(target[0]);
+     console.log('faz login',record);
     }
 });

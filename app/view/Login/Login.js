@@ -17,13 +17,16 @@ Ext.define('TR.view.Login.Login', {
             xtype: 'form',
             items: [
                 {
+                
                     xtype: 'textfield',
                     name: 'username',
-                    fieldLabel: 'Username:'
+                    fieldLabel: 'Username:',
+                    inputType:'email'
                 }, {
                     xtype: 'textfield',
                     name: 'password',
-                    fieldLabel: 'Password'
+                    fieldLabel: 'Password',
+                    inputType: 'password'
                 }]
         }
     ],
