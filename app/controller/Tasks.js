@@ -3,11 +3,11 @@ Ext.define('TR.controller.Tasks', {
 
     stores: ['Tasks'],
     models: ['Task'],
-    views: ['Task.List', 'Task.Edit'],
+    views: ['Task.ListTask', 'Task.EditTask'],
 
     refs: [{
-            ref: 'taskList1',
-            selector: 'tasklist[name=list1]'
+            ref: 'listTask',
+            selector: 'listtask[name=list1]'
         }, {
             ref: 'viewport',
             selector: 'viewport'
@@ -19,10 +19,10 @@ Ext.define('TR.controller.Tasks', {
 
     init: function () {
         this.control({
-            'tasklist': {
+            'listtask': {
                 itemdblclick: this.editTask
             },
-            'taskedit': {
+            'edittask': {
                 saveTask: {
                     fn: this.updateTask,
                     element: this
@@ -44,7 +44,7 @@ Ext.define('TR.controller.Tasks', {
     },
 
     editTask: function (grid, record) {
-        var view = Ext.widget('taskedit', {
+        var view = Ext.widget('edittask', {
             record: record
         });
     },
@@ -52,7 +52,7 @@ Ext.define('TR.controller.Tasks', {
     addTask: function (grid, record) {
         var record = Ext.create("TR.model.Task");
         Ext.StoreManager.get("Tasks").add(record);
-        var view = Ext.widget('taskedit', {
+        var view = Ext.widget('edittask', {
             record: record
         });
     }

@@ -1,6 +1,6 @@
-Ext.define('TR.view.Task.List', {
+Ext.define('TR.view.Task.ListTask', {
     extend: 'Ext.grid.Panel',
-    alias: 'widget.tasklist',
+    alias: 'widget.listtask',
 
     queryMode: 'local',
 

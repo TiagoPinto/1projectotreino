@@ -1,6 +1,6 @@
-Ext.define('TR.view.Task.Edit', {
+Ext.define('TR.view.Task.EditTask', {
     extend: 'Ext.window.Window',
-    alias: 'widget.taskedit',
+    alias: 'widget.edittask',
 
     title: 'Edit Task',
     layout: 'fit',
@@ -21,8 +21,18 @@ Ext.define('TR.view.Task.Edit', {
                 record = form.getRecord(),
                 values = form.getValues();
             record.set(values);
-            this.close();
-            this.fireEvent("saveTask", record);
+            if (record.data.title == "") {
+                Ext.Msg.alert('Please insert a Title');
+            } else if (record.data.description == "") {
+                Ext.Msg.alert('Please insert a Decription');
+
+            } else if (record.data.column == "") {
+                Ext.Msg.alert('Please insert a Column');
+
+            } else {
+                this.close();
+                this.fireEvent("saveTask", record);
+            }
         }, this);
 
         this.down("button[action=cancel]").on("click", function () {
@@ -40,12 +50,14 @@ Ext.define('TR.view.Task.Edit', {
                 {
                     xtype: 'textfield',
                     name: 'title',
-                    fieldLabel: 'Title'
+                    fieldLabel: 'Title',
+                    allowBlank:false
                     },
                 {
                     xtype: 'textfield',
                     name: 'description',
-                    fieldLabel: 'Discription'
+                    fieldLabel: 'Discription',
+                    allowBlank:false
                     },
                 {
                     xtype: 'combo',
@@ -53,7 +65,8 @@ Ext.define('TR.view.Task.Edit', {
                     name: 'column',
                     queryMode: 'local',
                     store: 'Columns',
-                    displayField: 'title'
+                    displayField: 'title',
+                    allowBlank:false
                     }
                 ]
             }

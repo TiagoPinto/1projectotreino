@@ -10,7 +10,7 @@ Ext.define('TR.view.Viewport', {
     },
 
     syncListStores: function () {
-        Ext.Array.each(this.query("tasklist"), function (tl) {
+        Ext.Array.each(this.query("listtask"), function (tl) {
             tl.getStore().reload();
         });
     },
@@ -22,7 +22,7 @@ Ext.define('TR.view.Viewport', {
             items: [{
                 xtype: 'container',
                 items: [{
-                    xtype: 'mainpage'
+                    xtype: 'listcolumn'
                 }]
             }]
         });

@@ -21,6 +21,7 @@ Ext.define('TR.view.Column.AddColumn', {
                 record = form.getRecord(),
                 values = form.getValues();
             record.set(values);
+
             this.fireEvent("addColumn", record);
             this.close();
         }, this);
@@ -40,8 +41,9 @@ Ext.define('TR.view.Column.AddColumn', {
                 {
                     xtype: 'textfield',
                     name: 'title',
-                    fieldLabel: 'Title'
-                    }
+                    fieldLabel: 'Title',
+                    allowBlank: 'false'
+                }
                 ]
             }
         ],

@@ -1,12 +1,9 @@
 Ext.define('TR.controller.Login', {
     extend: 'Ext.app.Controller',
 
-    views: ['Login.Login', 'Task.ListColumns'],
+    views: ['Login.Login'],
 
     refs: [{
-        ref: 'mainpage',
-        selector: 'mainpage'
-    },{
         ref: 'btnlogin',
         selector: '#btnlogin'
     }],
@@ -23,5 +20,6 @@ Ext.define('TR.controller.Login', {
     },
 
     login: function (grid, record) {
+     console.log('faz login',record);
     }
 });

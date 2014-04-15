@@ -1,6 +1,6 @@
-Ext.define('TR.view.Task.ListColumns', {
+Ext.define('TR.view.Column.ListColumn', {
     extend: 'Ext.Container',
-    alias: 'widget.mainpage',
+    alias: 'widget.listcolumn',
 
     layout: {
         type: 'vbox',
@@ -9,7 +9,7 @@ Ext.define('TR.view.Task.ListColumns', {
     },
 
     syncListStores: function () {
-        Ext.Array.each(this.query("tasklist"), function (tl) {
+        Ext.Array.each(this.query("listtask"), function (tl) {
             tl.getStore().reload();
         });
     },
@@ -27,7 +27,7 @@ Ext.define('TR.view.Task.ListColumns', {
             }, {
                 xtype: 'container',
                 layout: 'column',
-                name: 'tasklistcontainer',
+                name: 'listtaskcontainer',
                 items: []
             }, {
                 xtype: 'container',
