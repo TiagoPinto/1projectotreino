@@ -35,7 +35,6 @@ Ext.define('TR.controller.Login', {
         var listColumn = Ext.create("TR.view.Column.ListColumn", {});
 
         for (var i = 1; i <= Ext.StoreManager.get("Columns").data.length; i++) {
-            console.log("coluna", store.data.get(i));
             var columnView = Ext.create("TR.view.Task.ListTask", {
                 record: store.data.get(i),
                 store: store,

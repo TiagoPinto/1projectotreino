@@ -5,8 +5,6 @@ Ext.define('TR.view.Login.Login', {
     title: 'Login',
     queryMode: 'local',
     
-    
-
     initComponent: function () {
         
         this.callParent(arguments);

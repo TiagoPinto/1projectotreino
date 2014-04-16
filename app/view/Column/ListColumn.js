@@ -20,12 +20,6 @@ Ext.define('TR.view.Column.ListColumn', {
         Ext.apply(me, {
             items: [{
                 xtype: 'container',
-                items: [{
-                    xtype: 'label',
-                    text: 'Aqui está o header'
-                }]
-            }, {
-                xtype: 'container',
                 layout: 'column',
                 name: 'listtaskcontainer',
                 items: []

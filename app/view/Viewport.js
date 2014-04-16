@@ -22,6 +22,9 @@ Ext.define('TR.view.Viewport', {
             items: [{
                 xtype: 'container',
                 items: [{
+                    xtype: 'image',
+                    src: '/resources/img/logo-trello.png'
+                }, {
                     xtype: 'login'
                 }]
             }]
