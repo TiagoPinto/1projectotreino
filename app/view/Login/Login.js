@@ -8,6 +8,13 @@ Ext.define('TR.view.Login.Login', {
     initComponent: function () {
         
         this.callParent(arguments);
+        
+        this.addEvents(
+            /**
+             * @event saveTask
+             * Triggered when the user presses the save button.
+             */
+            "login");
     },
 
     items: [
@@ -24,7 +31,8 @@ Ext.define('TR.view.Login.Login', {
                     xtype: 'textfield',
                     name: 'password',
                     fieldLabel: 'Password',
-                    inputType: 'password'
+                    inputType: 'password',
+                    itemId: 'username'
                 }]
         }
     ],

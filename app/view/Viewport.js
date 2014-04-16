@@ -22,10 +22,20 @@ Ext.define('TR.view.Viewport', {
             items: [{
                 xtype: 'container',
                 items: [{
-                    xtype: 'image',
-                    src: '/resources/img/logo-trello.png'
+                    xtype: 'container',
+                    items: [{
+                        xtype: 'image',
+                        src: '/resources/img/logo-trello.png'
+                    }, {
+                        xtype: 'label',
+                        text: 'nome user',
+                    }]
                 }, {
-                    xtype: 'login'
+                    xtype: 'container',
+                    itemId: 'log',
+                    items: {
+                        xtype: 'login'
+                    }
                 }]
             }]
         });

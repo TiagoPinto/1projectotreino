@@ -14,7 +14,13 @@ Ext.define('TR.controller.Login', {
     }, {
         ref: "columnContainer",
         selector: "listcolumn [name=listtaskcontainer]"
-        }],
+    }, {
+        ref: "loginContainer",
+        selector: "#log"
+    }, {
+        ref: "username",
+        selector: "#username"
+    }],
 
     init: function () {
         this.control({
@@ -28,13 +34,12 @@ Ext.define('TR.controller.Login', {
     },
 
     login: function (grid, record) {
-        var viewport = this.getViewport();
-        var log = this.getViewport().down('login');
-        viewport.removeAll();
+        this.getLoginContainer().removeAll();
+
         var store = Ext.StoreManager.get("Columns");
         var listColumn = Ext.create("TR.view.Column.ListColumn", {});
-
-        for (var i = 1; i <= Ext.StoreManager.get("Columns").data.length; i++) {
+        //Create each collumn in store and add it to the listcolumnView
+        for (var i = 1; i <= store.data.length; i++) {
             var columnView = Ext.create("TR.view.Task.ListTask", {
                 record: store.data.get(i),
                 store: store,
@@ -42,7 +47,6 @@ Ext.define('TR.controller.Login', {
             });
             this.getColumnContainer().add(columnView);
         };
-
-        viewport.add(listColumn);
+        this.getViewport().add(listColumn);
     }
 });
